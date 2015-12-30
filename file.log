@@ -1,0 +1,15 @@
+MPlayer2 2.0-728-g2c378c7-4+b1 (C) 2000-2012 MPlayer Team
+Cannot open file '/home/pi/.mplayer/input.conf': No such file or directory
+Failed to open /home/pi/.mplayer/input.conf.
+Cannot open file '/etc/mplayer/input.conf': No such file or directory
+Failed to open /etc/mplayer/input.conf.
+
+Playing http://www.fromtexttospeech.com/output/0169338001451468988/9778363.mp3.
+Resolving www.fromtexttospeech.com for AF_INET6...
+Couldn't resolve name for AF_INET6: www.fromtexttospeech.com
+Resolving www.fromtexttospeech.com for AF_INET...
+Connecting to server wwCache fill:  0.00% (0 bytes)   
+A:   0.0 (00.0) of 1.0 (01.0) ??,?% 0% [KA:   0.2 (00.2) of 1.0 (01.0)  0.7% 0% [KA:   0.5 (00.4) of 1.0 (01.0)  0.7% 0% [KA:   0.5 (00.4) of 1.0 (01.0)  0.7% 0% [KA:   0.5 (00.5) of 1.0 (01.0)  0.7% 0% [KA:   0.5 (00.5) of 1.0 (01.0)  0.7% 0% [KA:   0.6 (00.5) of 1.0 (01.0)  0.7% 0% [KA:   0.6 (00.5) of 1.0 (01.0)  0.7% 0% [KA:   0.6 (00.5) of 1.0 (01.0)  0.7% 0% [KA:   0.6 (00.6) of 1.0 (01.0)  0.7% 0% [KA:   0.6 (00.6) of 1.0 (01.0)  0.7% 0% [KA:   0.7 (00.6) of 1.0 (01.0)  0.7% 0% [KA:   0.7 (00.6) of 1.0 (01.0)  0.7%
+
+Exiting... (End of file)
+1.0 (01.0)  0.7% 0% [KA:   0.7 (00.7) of 1.0 (01.0)  0.7% 0% [KA:   0.7 (00.7) of 1.0 (01.0)  0.7% 0% [KA:   0.8 (00.7) of 1.0 (01.0)  0.7% 0% [KA:   0.8 (00.7) of 1.0 (01.0)  0.7% 0% [KA:   0.8 (00.7) of 1.0 (01.0)  0.7% 0% [KA:   0.8 (00.8) of 1.0 (01.0)  0.7% 0% [KA:   0.8 (00.8) of 1.0 (01.0)  0.7% 0% [KA:   0.9 (00.8) of 1.0 (01.0)  0.7% 0% [KA:   0.9 (00.8) of 1.0 (01.0)  0.7% 0% [K
