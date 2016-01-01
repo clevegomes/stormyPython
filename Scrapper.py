@@ -14,11 +14,14 @@ import sys
 
 
 
+
 cj = CookieJar()
 opener = urllib2.build_opener(urllib2.HTTPCookieProcessor(cj))
 opener.addheaders = [('user-agent','Mozilla/5.0')]
 
 
+def shellQuote(s):
+    return "'" + s.replace("'", "'\\''") + "'"
 
 def newsFeed():
     news = ""
@@ -31,15 +34,17 @@ def newsFeed():
             cnt = 0;
             for description in descriptions:
                 cnt += 1
-                if cnt <= 3:
+                if cnt <= 10:
                     news = news +  unicode(description,"ascii")  + "  "
-
+                     
         except Exception, e:
             return  str(e)
 
 
     except Exception, e:
         return str(e)
+
+    return news
 
 
 
@@ -53,11 +58,12 @@ def localSensors():
 
 
     difference =  systemdTime- serverdTime ;
-
-    cutoffTime = 30*60;
+	
+    # check if the local reading are not more than 10 min old
+    cutoffTime = 10*60;
     localSensorReading = ""
     if difference.total_seconds() <= cutoffTime:
-        localSensorReading = "Local sensor reading.Your local room temperature sensor reading is recorded at " +jdata["t"]+" degrees celsius,local humidity recorded at "+jdata["h"]+" percent and local pressure recorded at "+jdata["p"]+" millibars"
+        localSensorReading = " Local sensor readings. Your local room temperature  is recorded at " +jdata["t"]+" degrees celsius,local humidity recorded at "+jdata["h"]+" percent and local pressure recorded at "+jdata["p"]+" millibars"
         
 
     return localSensorReading
@@ -74,16 +80,25 @@ def localSensors():
 news = newsFeed()
 sensors = localSensors()
 
-textToSpeach = sensors
+#print(news)
+#exit()
+textToSpeach = shellQuote(news + "  " + sensors)
+#textToSpeach = sensors
 
-os.system("/var/pythonFiles/stormyPython/tts.sh "+ textToSpeach + " > file.log 2>&1")
 
 mixer.init()
 mixer.music.load('/var/pythonFiles/stormyPython/bbc.mp3')
 mixer.music.set_volume(0.3)
-mixer.music.play();
-while mixer.music.get_busy() == True:
-    continue
+mixer.music.play(loops = -1)
+
+
+os.system("/var/pythonFiles/stormyPython/tts.sh "+ textToSpeach + " > file.log 2>&1")
+mixer.music.fadeout(2000)
+time.sleep(3)
+
+
+#while mixer.music.get_busy() == True:
+#    continue
 
 
 
