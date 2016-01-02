@@ -1,4 +1,5 @@
 import requests
+
 import json
 import datetime
 import os
@@ -13,6 +14,12 @@ import sys
 
 
 
+now = datetime.datetime.now().time()
+
+#print(now)
+# Silence mode on after midnight till 7am .I am subtracting 4 to 7 since the time is in utc  and we are 4 hr ahead  and checking midnight for 20 again since we are 4 hr ahead
+if now <= datetime.time((7-4),00) or now >= datetime.time(20,00):
+    exit()
 
 
 cj = CookieJar()
