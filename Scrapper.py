@@ -18,8 +18,8 @@ now = datetime.datetime.now().time()
 
 #print(now)
 # Silence mode on after midnight till 7am .I am subtracting 4 to 7 since the time is in utc  and we are 4 hr ahead  and checking midnight for 20 again since we are 4 hr ahead
-if now <= datetime.time((7-4),00) or now >= datetime.time(20,00):
-    exit()
+#if now <= datetime.time((7-4),00) or now >= datetime.time(20,00):
+#    exit()
 
 
 cj = CookieJar()
@@ -67,7 +67,7 @@ def localSensors():
     difference =  systemdTime- serverdTime ;
 	
     # check if the local reading are not more than 10 min old
-    cutoffTime = 10*60;
+    cutoffTime = 100000*60;
     localSensorReading = ""
     if difference.total_seconds() <= cutoffTime:
         localSensorReading = " Local sensor readings. Your local room temperature  is recorded at " +jdata["t"]+" degrees celsius,local humidity recorded at "+jdata["h"]+" percent and local pressure recorded at "+jdata["p"]+" millibars"
@@ -87,19 +87,19 @@ def localSensors():
 news = newsFeed()
 sensors = localSensors()
 
-#print(news)
+#print(sensors)
 #exit()
 textToSpeach = shellQuote(news + "  " + sensors)
 #textToSpeach = sensors
 
 
 mixer.init()
-mixer.music.load('/var/pythonFiles/stormyPython/bbc.mp3')
+mixer.music.load('bbc.mp3')
 mixer.music.set_volume(0.3)
 mixer.music.play(loops = -1)
 
 
-os.system("/var/pythonFiles/stormyPython/tts.sh "+ textToSpeach + " > file.log 2>&1")
+os.system("./tts.sh "+ textToSpeach + " > file.log 2>&1")
 mixer.music.fadeout(2000)
 time.sleep(3)
 
