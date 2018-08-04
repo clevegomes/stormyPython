@@ -85,11 +85,11 @@ def localSensors():
 
 
 news = newsFeed()
-sensors = localSensors()
+#sensors = localSensors()
 
 #print(sensors)
 #exit()
-textToSpeach = shellQuote(news + "  " + sensors)
+textToSpeach = shellQuote(news)
 #textToSpeach = sensors
 
 
@@ -98,6 +98,7 @@ mixer.music.load('bbc.mp3')
 mixer.music.set_volume(0.3)
 mixer.music.play(loops = -1)
 
+#print(textToSpeach)
 
 os.system("./tts.sh "+ textToSpeach + " > file.log 2>&1")
 mixer.music.fadeout(2000)
