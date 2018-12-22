@@ -18,6 +18,7 @@ mixer.init()
 mixer.music.load('farm-animals.mp3')
 mixer.music.set_volume(0.7)
 mixer.music.play(loops=0, start=0.0)
-while pygame.mixer.music.get_busy():
 # mixer.music.fadeout(9000)
 # time.sleep(9)
+while pygame.mixer.music.get_busy():
+    time.sleep(1)
