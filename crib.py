@@ -20,5 +20,5 @@ mixer.music.set_volume(0.7)
 mixer.music.play(loops=0, start=0.0)
 # mixer.music.fadeout(9000)
 # time.sleep(9)
-while pygame.mixer.music.get_busy():
+while mixer.music.get_busy():
     time.sleep(1)
