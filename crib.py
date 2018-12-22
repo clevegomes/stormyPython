@@ -16,5 +16,5 @@ import sys
 
 mixer.init()
 mixer.music.load('bbc.mp3')
-mixer.music.set_volume(0.3)
+mixer.music.set_volume(1)
 mixer.music.play(loops = -1)
