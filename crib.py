@@ -15,7 +15,7 @@ import sys
 
 
 mixer.init()
-mixer.music.load('bbc.mp3')
+mixer.music.load('farm-animals.mp3')
 mixer.music.set_volume(1)
 mixer.music.play(loops = -1)
 mixer.music.fadeout(2000)
