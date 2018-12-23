@@ -5,6 +5,7 @@ import time
 
 
 def playMusic(url = ''):
+    blinkRelay(2, 0.2, 6)
     mixer.init()
     mixer.music.load(url)
     mixer.music.set_volume(0.2)
@@ -30,7 +31,7 @@ def startRelay():
 
 
 def blinkRelay(pin, SleepTimeL = 2, count = 2):
-    startRelay()
+
     # time to sleep between operations in the main loop
     try:
         i = 1
@@ -50,10 +51,20 @@ def blinkRelay(pin, SleepTimeL = 2, count = 2):
         # Reset GPIO settings
         GPIO.cleanup()
 
+def ToggleRelay(pin,on =true):
+    startRelay()
+    if on == true:
+        GPIO.output(pin, GPIO.LOW)
+    else:
+        GPIO.output(pin, GPIO.HIGH)
 
-blinkRelay(2,0.2,6)
+
+def cleanUpRelay():
+    GPIO.cleanup()
+
+ToggleRelay()
 playMusic('/home/pi/projects/stormyPython/farm-animals.mp3')
 playMusic('/home/pi/projects/stormyPython/silent-night.mp3')
 playMusic('/home/pi/projects/stormyPython/noel.mp3')
 playMusic('/home/pi/projects/stormyPython/we-three-kings.mp3')
-
+cleanUpRelay()
