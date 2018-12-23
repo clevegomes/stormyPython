@@ -34,7 +34,9 @@ def startRelay():
         GPIO.output(2, GPIO.LOW)
         print "ONE"
         time.sleep(SleepTimeL);
+        
         GPIO.output(3, GPIO.LOW)
+        time.sleep(SleepTimeL);
         print "TWO"
         GPIO.cleanup()
         print "Good bye!"
