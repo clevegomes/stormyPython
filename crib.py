@@ -6,8 +6,8 @@ import time
 
 def playMusic(url = '',decoLightsOn = 0):
     blinkRelay(2, 0.2, 6)
-    # if decoLightsOn == 1 :
-        # onRelay(3)
+    if decoLightsOn == 1 :
+        onRelay(3)
     mixer.init()
     mixer.music.load(url)
     mixer.music.set_volume(0.2)
@@ -44,7 +44,6 @@ def blinkRelay(pin, SleepTimeL = 2, count = 2):
             GPIO.output(pin, GPIO.HIGH)
             time.sleep(SleepTimeL);
         # GPIO.cleanup()
-        print "Good bye!"
 
     # End program cleanly with keyboard
     except KeyboardInterrupt:
