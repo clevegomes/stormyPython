@@ -32,7 +32,9 @@ def blinkRelay(pin, SleepTimeL = 2, count = 2):
     startRelay()
     # time to sleep between operations in the main loop
     try:
-        for i in count:
+        i = 1
+        while i <= count:
+            i += 1
             GPIO.output(pin, GPIO.LOW)
             time.sleep(SleepTimeL);
         GPIO.cleanup()
