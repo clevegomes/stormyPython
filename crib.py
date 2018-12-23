@@ -37,6 +37,8 @@ def blinkRelay(pin, SleepTimeL = 2, count = 2):
             i += 1
             GPIO.output(pin, GPIO.LOW)
             time.sleep(SleepTimeL);
+            GPIO.output(pin, GPIO.HIGH)
+            time.sleep(SleepTimeL);
         GPIO.cleanup()
         print "Good bye!"
 
