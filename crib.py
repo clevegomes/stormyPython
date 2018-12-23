@@ -28,7 +28,7 @@ def startRelay():
 
 
 
-def blinkRelay(pin, SleepTimeL = 2, count = 2 ):
+def blinkRelay(pin, SleepTimeL = 2, count = 2):
     startRelay()
     # time to sleep between operations in the main loop
     try:
@@ -46,7 +46,7 @@ def blinkRelay(pin, SleepTimeL = 2, count = 2 ):
         GPIO.cleanup()
 
 
-blinkRelay()
+blinkRelay(2)
 playMusic('/home/pi/projects/stormyPython/farm-animals.mp3')
 playMusic('/home/pi/projects/stormyPython/silent-night.mp3')
 playMusic('/home/pi/projects/stormyPython/noel.mp3')
