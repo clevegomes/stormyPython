@@ -53,7 +53,7 @@ def startRelay():
         # Reset GPIO settings
         GPIO.cleanup()
 
-# startRelay()
+startRelay()
 playMusic('/home/pi/projects/stormyPython/farm-animals.mp3')
 playMusic('/home/pi/projects/stormyPython/silent-night.mp3')
 playMusic('/home/pi/projects/stormyPython/noel.mp3')
