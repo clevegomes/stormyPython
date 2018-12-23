@@ -50,7 +50,7 @@ def blinkRelay(pin, SleepTimeL = 2, count = 2):
         GPIO.cleanup()
 
 
-blinkRelay(2,1)
+blinkRelay(2,0.5)
 playMusic('/home/pi/projects/stormyPython/farm-animals.mp3')
 playMusic('/home/pi/projects/stormyPython/silent-night.mp3')
 playMusic('/home/pi/projects/stormyPython/noel.mp3')
