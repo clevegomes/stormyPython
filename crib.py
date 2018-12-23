@@ -26,18 +26,15 @@ def startRelay():
         GPIO.setup(i, GPIO.OUT)
         GPIO.output(i, GPIO.HIGH)
 
+
+
+def blinkRelay(pin, SleepTimeL = 2, count = 2 ):
+    startRelay()
     # time to sleep between operations in the main loop
-
-    SleepTimeL = 2
-
     try:
-        GPIO.output(2, GPIO.LOW)
-        print "ONE"
-        time.sleep(SleepTimeL);
-        
-        GPIO.output(3, GPIO.LOW)
-        time.sleep(SleepTimeL);
-        print "TWO"
+        for i in count:
+            GPIO.output(pin, GPIO.LOW)
+            time.sleep(SleepTimeL);
         GPIO.cleanup()
         print "Good bye!"
 
@@ -48,7 +45,8 @@ def startRelay():
         # Reset GPIO settings
         GPIO.cleanup()
 
-startRelay()
+
+blinkRelay()
 playMusic('/home/pi/projects/stormyPython/farm-animals.mp3')
 playMusic('/home/pi/projects/stormyPython/silent-night.mp3')
 playMusic('/home/pi/projects/stormyPython/noel.mp3')
