@@ -5,7 +5,7 @@ import time
 
 
 def playMusic(url = '',decoLightsOn = 0):
-    # blinkRelay(2, 0.2, 6)
+    blinkRelay(2, 0.2, 6)
     # if decoLightsOn == 1 :
         # onRelay(3)
     mixer.init()
@@ -63,9 +63,9 @@ def offRelay(pin):
 def cleanUpRelay():
     GPIO.cleanup()
 
-# startRelay()
+startRelay()
 playMusic('/home/pi/projects/stormyPython/farm-animals.mp3', 1)
 playMusic('/home/pi/projects/stormyPython/silent-night.mp3')
 playMusic('/home/pi/projects/stormyPython/noel.mp3')
 playMusic('/home/pi/projects/stormyPython/we-three-kings.mp3')
-# cleanUpRelay()
+cleanUpRelay()
