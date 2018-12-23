@@ -28,6 +28,7 @@ def startRelay():
 
 
 
+
 def blinkRelay(pin, SleepTimeL = 2, count = 2):
     startRelay()
     # time to sleep between operations in the main loop
@@ -39,7 +40,7 @@ def blinkRelay(pin, SleepTimeL = 2, count = 2):
             time.sleep(SleepTimeL);
             GPIO.output(pin, GPIO.HIGH)
             time.sleep(SleepTimeL);
-        GPIO.cleanup()
+        # GPIO.cleanup()
         print "Good bye!"
 
     # End program cleanly with keyboard
